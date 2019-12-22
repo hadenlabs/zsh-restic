@@ -9,14 +9,6 @@
 #
 restic_package_name=restic
 
-ZSH_RESTIC_PATH_ROOT=$(dirname "${0}":A)
-
-# shellcheck source=/dev/null
-source "${ZSH_RESTIC_PATH_ROOT}"/src/helpers/messages.zsh
-
-# shellcheck source=/dev/null
-source "${ZSH_RESTIC_PATH_ROOT}"/src/helpers/tools.zsh
-
 function restic::install {
     message_info "Installing ${restic_package_name}"
     if ! type -p brew > /dev/null; then
