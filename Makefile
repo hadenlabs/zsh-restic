@@ -18,10 +18,12 @@ else
 endif
 
 TEAM := private
+AWS_VAULT ?= luismayta
 PROJECT := zsh-restic
 PROJECT_PORT := 8000
 
 PYTHON_VERSION=3.8.0
+NODE_VERSION=v12.14.1
 PYENV_NAME="${PROJECT}"
 
 # Configuration.
@@ -68,16 +70,20 @@ help:
 	@make docs.help
 	@make test.help
 
+
 setup:
 	@echo "=====> install packages..."
+	pyenv local ${PYTHON_VERSION}
+	yarn
 	$(PIPENV_INSTALL) --dev --skip-lock
 	$(PIPENV_RUN) pre-commit install
 	$(PIPENV_RUN) pre-commit install -t pre-push
 	@cp -rf provision/git/hooks/prepare-commit-msg .git/hooks/
-	@[[ -e ".env" ]] || cp -rf .env.example .env
+	@[ -e ".env" ] || cp -rf .env.example .env
 	@echo ${MESSAGE_HAPPY}
 
 environment:
 	@echo "=====> loading virtualenv ${PYENV_NAME}..."
-	@pipenv --venv || $(PIPENV_INSTALL) --skip-lock --python=${PYTHON_VERSION}
+	pyenv local ${PYTHON_VERSION}
+	@pipenv --venv || $(PIPENV_INSTALL) --python=${PYTHON_VERSION} --skip-lock
 	@echo ${MESSAGE_HAPPY}
