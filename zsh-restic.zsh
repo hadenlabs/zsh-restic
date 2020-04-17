@@ -22,5 +22,6 @@ source "${RESTIC_SRC_DIR}"/base.zsh
 function restic::backup {
     restic backup -r "${RESTIC_REPOSITORY}" "${HOME}/.ssh" -v 2
     restic backup -r "${RESTIC_REPOSITORY}" "${HOME}/Documents" -v 2
+    restic backup -r "${RESTIC_REPOSITORY}" /Volumes/Keybase/private/luismayta/* -v 2
     restic backup -r "${RESTIC_REPOSITORY}" /Volumes/Keybase/team/* -v 2
 }
