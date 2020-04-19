@@ -1,6 +1,10 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
+cat > "${RESTIC_FILE_EXCLUDE}" << EOF
+    ._*
+EOF
+
 function restic::install {
     message_info "Installing ${RESTIC_PACKAGE_NAME}"
     if ! type -p brew > /dev/null; then
