@@ -18,8 +18,6 @@ export GHQ_MESSAGE_BREW="Please install brew or use antibody bundle luismayta/zs
 [ -z "${RESTIC_PATHS_BACKUP}" ] && export RESTIC_PATHS_BACKUP=(
         "${HOME}/.ssh"
         "${HOME}/Documents"
-        /Volumes/Keybase/private/luismayta/*
-        /Volumes/Keybase/team/*
     )
 
 
