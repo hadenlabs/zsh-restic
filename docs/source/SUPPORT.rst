@@ -6,7 +6,7 @@ If you have any problems with starting zsh-restic, please report it on GitHub: h
 
 
 Who is behind zsh-restic
------------------------
+------------------------
 
 **Organisation**:
 
