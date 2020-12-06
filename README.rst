@@ -1,9 +1,9 @@
 zsh-restic
 ==========
 
-|Build Status| |GitHub issues| |GitHub license| |Fossa|
-
 Functions and tools restic with zsh
+
+|Build Status| |GitHub issues| |GitHub license| |Fossa|
 
 :Version: 0.0.0
 :Web: https://github.com/luismayta/zsh-restic
