@@ -1,6 +1,21 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
+export RESTIC_MESSAGE_BREW="Please install brew or use antibody bundle luismayta/zsh-brew branch:develop"
+export RESTIC_MESSAGE_RVM="Please install rvm or use antibody bundle luismayta/zsh-rvm branch:develop"
+export RESTIC_PACKAGE_NAME=restic
+
+[ -z "${RESTIC_PASSWORD_COMMAND}" ] && unset RESTIC_PASSWORD_COMMAND
+[ -z "${RESTIC_FILE_EXCLUDE}" ] && export RESTIC_FILE_EXCLUDE="${HOME}/tmp/restic_excludes"
+[ -z "${RESTIC_REPOSITORY}" ] && export RESTIC_REPOSITORY=/Volumes/MrRobot/Backup
+[ -z "${RESTIC_PATHS_BACKUP}" ] && export RESTIC_PATHS_BACKUP=(
+        "${HOME}/.ssh"
+        "${HOME}/Documents"
+    )
+
+
+[ -n "${RESTIC_PASSWORD}" ] && echo "${RESTIC_PASSWORD}" > "${RESTIC_PASSWORD_FILE}"
+
 cat > "${RESTIC_FILE_EXCLUDE}" << EOF
 
 # Created by https://www.gitignore.io/api/linux,windows,osx,vim,emacs,compression,compressed,vagrant,node,python,java,terraform,php
@@ -475,15 +490,3 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/linux,windows,osx,vim,emacs,compression,compressed,vagrant,node,python,java,terraform,php
 
 EOF
-
-function restic::install {
-    message_info "Installing ${RESTIC_PACKAGE_NAME}"
-    if ! type -p brew > /dev/null; then
-        message_warning "${GHQ_MESSAGE_BREW}"
-        return
-    fi
-    brew install restic
-    message_success "Installed ${RESTIC_PACKAGE_NAME}"
-}
-
-if ! type -p restic > /dev/null; then restic::install; fi
