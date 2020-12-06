@@ -1,7 +1,5 @@
 FROM equipindustry/python:3.8.0-slim
 
-MAINTAINER Luis Mayta <slovacus@gmail.com>
-
 ARG stage
 LABEL NAME zsh-restic-check-$stage
 
@@ -16,7 +14,7 @@ RUN apt-get update -y \
   git-core \
   shellcheck \
   # install python dependencies
-  && pip3 install pipenv \
+  && pip install --no-cache-dir pipenv \
   && pipenv install --dev --skip-lock \
   && pipenv shell --fancy \
   && apt-get purge \
