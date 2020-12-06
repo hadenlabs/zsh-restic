@@ -1,7 +1,7 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
-function config::main::factory {
+function restic::config::main::factory {
     # shellcheck source=/dev/null
     source "${ZSH_RESTIC_PATH}"/config/base.zsh
     case "${OSTYPE}" in
@@ -16,4 +16,4 @@ function config::main::factory {
     esac
 }
 
-config::main::factory
+restic::config::main::factory
