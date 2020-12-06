@@ -1,7 +1,5 @@
 FROM equipindustry/python:3.8.0-slim
 
-MAINTAINER Luis Mayta <slovacus@gmail.com>
-
 ARG stage
 
 LABEL NAME zsh-restic-app-$stage
@@ -53,7 +51,7 @@ RUN apt-get update -y \
 
 
 # pipenv
-  && pip3 install pipenv \
+  && pip install --no-cache-dir pipenv \
   && pipenv install --dev --skip-lock \
   && pipenv shell --fancy \
 
