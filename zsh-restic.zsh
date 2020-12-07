@@ -18,6 +18,3 @@ source "${ZSH_RESTIC_PATH}"/internal/main.zsh
 
 # shellcheck source=/dev/null
 source "${ZSH_RESTIC_PATH}"/pkg/main.zsh
-
-# shellcheck source=/dev/null
-source "${RESTIC_SRC_DIR}"/base.zsh
