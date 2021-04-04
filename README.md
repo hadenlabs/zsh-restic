@@ -62,17 +62,13 @@ to your `.zshrc` where you're adding your other plugins.
 
 zsh restic includes a small utility `restic` to fetch and install new packages.
 
-#### `restic::install`
+#### `restic::backup` `path`
 
-Install restic.
+run backup of path.
 
-#### `restic::load`
+#### `restic::backup::all`
 
-Load path restic.
-
-#### `restic::upgrade`
-
-Upgrade version restic.
+run a backup of all to restic
 
 ## Help
 
