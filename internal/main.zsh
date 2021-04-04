@@ -18,4 +18,4 @@ function restic::internal::main::factory {
 
 restic::internal::main::factory
 
-if ! type -p restic > /dev/null; then restic::internal::restic::install; fi
+if ! core::exists restic > /dev/null; then  core::install restic; fi
