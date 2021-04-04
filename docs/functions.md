@@ -1,27 +1,15 @@
 ## Functions
 
-zsh vagrant includes a small utility `vagrant` to fetch and install new packages.
+zsh restic includes a small utility `restic` to fetch and install new packages.
 
-#### `vagrant::install`
+#### `restic::install`
 
-Install vagrant.
+Install restic.
 
-#### `vagrant::load`
+#### `restic::load`
 
-Load path vagrant.
+Load path restic.
 
-#### `vagrant::upgrade`
+#### `restic::upgrade`
 
-Upgrade version vagrant.
-
-#### `vagrant::package::all::install`
-
-Install all package of vagrant.
-
-#### `vagrant::install::versions`
-
-Install versions of config for vagrant.
-
-#### `vagrant::install::version::global`
-
-Install a version global of vagrant.
+Upgrade version restic.
