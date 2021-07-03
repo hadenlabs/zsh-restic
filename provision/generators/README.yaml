@@ -14,25 +14,28 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: 'LGPLv3'
+license: 'LGPL-3.0'
 
 # Canonical GitHub repo
 github_repo: hadenlabs/zsh-restic
 
 # Badges to display
 badges:
-  - name: GitHub tag (latest SemVer)
-    image: https://img.shields.io/github/v/tag/hadenlabs/zsh-restic.svg?label=latest&sort=semver
+  - name: Latest Release
+    image: https://img.shields.io/github/release/hadenlabs/zsh-restic
     url: https://github.com/hadenlabs/zsh-restic/releases
   - name: Lint
-    image: https://github.com/hadenlabs/zsh-restic/actions/workflows/lint.yml/badge.svg?branch=develop
-    url: https://github.com/hadenlabs/zsh-restic/actions
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-restic/lint-code
+    url: https://github.com/hadenlabs/zsh-restic/actions?workflow=lint-code
   - name: Issues
-    image: https://img.shields.io/github/issues/hadenlabs/zsh-restic.svg
+    image: https://img.shields.io/github/issues/hadenlabs/zsh-restic
     url: https://github.com/hadenlabs/zsh-restic/issues
-  - name: Latest Release
-    image: https://img.shields.io/github/release/hadenlabs/zsh-restic.svg
-    url: https://github.com/hadenlabs/zsh-restic/releases
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    url: https://keepachangelog.com
 
 # Short description of this project
 description: |-
