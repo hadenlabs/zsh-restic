@@ -5,16 +5,7 @@
       "pattern": "^https://hadenlabs.com"
     },
     {
-      "pattern": "^https://github.com/hadenlabs/zsh-restic/releases.*$"
-    },
-    {
-      "pattern": "^https://github.com/hadenlabs/zsh-restic/pulls.*$"
-    },
-    {
-      "pattern": "^https://github.com/hadenlabs/zsh-restic/actions.*$"
-    },
-    {
-      "pattern": "^https://github.com/hadenlabs/zsh-restic/issues.*$"
+      "pattern": "^https://github.com/hadenlabs/zsh-restic/compare"
     }
   ],
   "replacementPatterns": [
