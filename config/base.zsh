@@ -4,6 +4,8 @@
 export RESTIC_MESSAGE_BREW="Please install brew or use antibody bundle luismayta/zsh-brew branch:develop"
 export RESTIC_MESSAGE_RVM="Please install rvm or use antibody bundle luismayta/zsh-rvm branch:develop"
 export RESTIC_PACKAGE_NAME=restic
+export RESTIC_PATH_CONFIG="${HOME}/.config/restic"
+export RESTIC_PATH_TMP="${HOME}/tmp"
 
 [ -z "${RESTIC_PASSWORD_COMMAND}" ] && unset RESTIC_PASSWORD_COMMAND
 [ -z "${RESTIC_FILE_EXCLUDE}" ] && export RESTIC_FILE_EXCLUDE="${HOME}/tmp/restic_excludes"
@@ -13,6 +15,10 @@ export RESTIC_PACKAGE_NAME=restic
         "${HOME}/Documents"
     )
 
+[ ! -e "${RESTIC_PATH_CONFIG}" ] && mkdir -p "${RESTIC_PATH_CONFIG}"
+[ ! -e "${RESTIC_PATH_TMP}" ] && mkdir -p "${RESTIC_PATH_TMP}"
+[ ! -e "${RESTIC_FILE_EXCLUDE}" ] && touch "${RESTIC_FILE_EXCLUDE}"
+[ ! -e "${RESTIC_PASSWORD_FILE}" ] && touch "${RESTIC_PASSWORD_FILE}"
 
 [ -n "${RESTIC_PASSWORD}" ] && echo "${RESTIC_PASSWORD}" > "${RESTIC_PASSWORD_FILE}"
 
